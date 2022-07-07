@@ -1,8 +1,7 @@
 # k8 is a yml file
-# we are going to create a deployment for our nginx-image
+# we are going to create a deployment for our mongodb-image
 # we will create 3 pods with with deployment
 # kubenetes get name-services - deploy/deployment
-
 apiVersion: apps/v1
 
 kind: Deployment
@@ -29,7 +28,6 @@ spec:
           ports:
             - containerPort: 27017
           
-
 
           imagePullPolicy: Always
 
