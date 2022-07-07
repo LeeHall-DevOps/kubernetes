@@ -19,7 +19,6 @@ kubectl delete pod [pod name]
 `kubectl delete deploy nginx`
 
 
-
 - to delete a service
 `kubectl delete svc [name on service]`
 
@@ -28,7 +27,6 @@ kubectl delete pod [pod name]
 
 - get info about cluster
 `kubectl cluster-info`
-
 
 - create 
 kubectl create -f nginx-deploy.yml

@@ -1,0 +1,33 @@
+# k8 is a yml file
+# we are going to create a deployment for our node-image
+# we will create 3 pods with with deployment
+# kubenetes get name-services - deploy/deployment
+
+apiVersion: apps/v1 # We uses APIs to communicate between app and db
+kind: Deployment
+
+# keep all names the same where every they are for the app
+metadata:
+  name: node
+spec:
+  selector:
+    matchLabels:
+      app: node
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: node
+    spec:
+      containers:
+        - name: node
+          image: eng114lee/node:v1
+          env:
+          - name: DB_HOST
+            value: mongodb://10.99.245.53:27017/posts
+
+          ports:
+            - containerPort: 3000
+
+
+          imagePullPolicy: Always

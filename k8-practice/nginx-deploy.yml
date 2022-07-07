@@ -2,7 +2,6 @@
 # we are going to create a deployment for our nginx-image
 # we will create 3 pods with with deployment
 # kubenetes get name-services - deploy/deployment
-# 
 
 apiVersion: apps/v1
 

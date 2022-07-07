@@ -1,0 +1,57 @@
+# k8 is a yml file
+# we are going to create a deployment for our nginx-image
+# we will create 3 pods with with deployment
+# kubenetes get name-services - deploy/deployment
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: mongodb
+spec:
+  selector:
+    matchLabels:
+      app: mongodb
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+        - name: mongodb
+          image: eng114lee/mongo_production:db
+          #env:
+          # - name: DB_HOST
+          #  value: mongodb://10.99.245.53:27017
+
+          ports:
+            - containerPort: 27017
+          
+
+
+          imagePullPolicy: Always
+
+
+
+
+
+
+
+
+
+
+
+
+      #     volumeMounts:
+      #       - mountPath: 
+      #         name: storage
+      # volumes:
+      #   - name: storage
+      #     persistentVolumeClaim:
+      #       claimName: mongodb
+
+
+          
+    
