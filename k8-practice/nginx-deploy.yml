@@ -1,0 +1,33 @@
+# k8 is a yml file
+# we are going to create a deployment for our nginx-image
+# we will create 3 pods with with deployment
+# kubenetes get name-services - deploy/deployment
+# 
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: nginx
+spec:
+# labels & selectors are the communication channels between micro-services
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: eng114lee/profile_page
+
+          ports:
+            - containerPort: 80
+
+
+          imagePullPolicy: Always
+    
